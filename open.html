@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hehehe makasii sayang 💞</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+  body {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+    transition: opacity 0.8s ease;
+  }
+
+  .container {
+    animation: fadeIn 1.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .love-img {
+    width: 180px;
+    max-width: 70vw;
+    margin-bottom: 25px;
+    animation: float 2s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  p {
+    color: #6d5c5c;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    background-color: #ffd6e5;
+    border: none;
+    color: #5a4a4a;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 3px #ffb6c1;
+    transition: all 0.25s ease;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    background-color: #ffc3d9;
+  }
+
+  @media (max-width: 600px) {
+    .love-img { width: 140px; }
+    p { font-size: 14px; }
+    .btn { padding: 9px 18px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.pinimg.com/originals/bc/ff/02/bcff029f6c15a1a8df68df689bea0e48.gif" alt="love bunny" class="love-img">
+    <p>yeayyy makasii udah jawab “SURE!!!” 💕<br>
+    last oneee, amell buat sesuatu buat sayanggg 💗<br>
+    baca pelan-pelan yaa...</p>
+    <button class="btn" onclick="goNext()">okee sayang 🫶</button>
+  </div>
+
+  <script>
+    function goNext() {
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = "final.html"; // halaman terakhir
+      }, 800);
+    }
+  </script>
+</body>
+</html>

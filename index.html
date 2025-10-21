@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrapbook Gift Lock</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ✨ Efek transisi lembut pas pindah halaman */
+  body {
+    transition: opacity 0.8s ease;
+  }
+
+  body.fade-out {
+    opacity: 0;
+  }
+
+  /* 🌸 Efek hover tombol */
+  .keypad button {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .keypad button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.6);
+  }
+
+  /* Tambahan jarak biar gak mepet */
+  .container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <img src="https://i.pinimg.com/originals/29/0c/6a/290c6a81fd771510854d283844311121.gif" alt="gift cat" class="cat-img">
+      <p class="text">hihi coba tebak passwordnya,<br> kakak pasti tau ! 💗</p>
+
+      <div class="password-dots">
+        <span>○</span><span>○</span><span>○</span><span>○</span>
+      </div>
+
+      <div class="keypad">
+        <button>1</button><button>2</button><button>3</button>
+        <button>4</button><button>5</button><button>6</button>
+        <button>7</button><button>8</button><button>9</button>
+        <button>0</button>
+      </div>
+
+      <p class="clue">💕 clue : tanggal kita ketemu 💕</p>
+    </div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".keypad button");
+    const dots = document.querySelectorAll(".password-dots span");
+    let input = "";
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (input.length < 4) {
+          input += button.textContent;
+          dots[input.length - 1].textContent = "●";
+        }
+
+        if (input.length === 4) {
+          if (input === "1607") {
+            // ✅ password benar
+            dots.forEach(dot => dot.style.color = "#7bd68c"); // jadi hijau
+
+            // Tambah tulisan kecil "yay benar!" sebelum fade
+            const msg = document.createElement("p");
+            msg.textContent = "💗 yay benar! 💗";
+            msg.style.color = "#ff6fa9";
+            msg.style.marginTop = "10px";
+            document.querySelector(".card").appendChild(msg);
+
+            // Efek fade-out sebelum pindah halaman
+            setTimeout(() => {
+              document.body.classList.add("fade-out");
+            }, 500);
+
+            setTimeout(() => {
+              window.location.href = "next.html"; // ubah sesuai halaman tujuan
+            }, 1300);
+          } else {
+            // ❌ salah
+            dots.forEach(dot => {
+              dot.textContent = "○";
+              dot.style.color = "#ff6b81";
+            });
+            input = "";
+            alert("Salah tebak 😜 coba lagi yaa!");
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

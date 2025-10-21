@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Are u ready? 💞</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+  body {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    transition: opacity 0.8s ease;
+  }
+
+  .container {
+    animation: fadeIn 1.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hug-img {
+    width: 180px;
+    max-width: 70vw;
+    margin-bottom: 25px;
+    animation: float 2s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  h1 {
+    color: #ff8fb6;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  .btn-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    background-color: #ffd6e5;
+    border: none;
+    color: #5a4a4a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px #ffb6c1;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    background-color: #ffc3d9;
+  }
+
+  @media (max-width: 600px) {
+    .hug-img { width: 140px; }
+    h1 { font-size: 1rem; margin-bottom: 20px; }
+    .btn { padding: 9px 18px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.pinimg.com/originals/e4/df/0f/e4df0fbd32e0fee3ca401a0c764344b2.gif" alt="hug" class="hug-img">
+    <h1>are u readyy to open thissss? 💌</h1>
+    <div class="btn-container">
+      <button class="btn" onclick="goNext()">suree 💖</button>
+      <button class="btn" onclick="nope()">no sowwy 😳</button>
+    </div>
+  </div>
+
+  <script>
+    function goNext() {
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = "open.html"; // halaman hadiah
+      }, 800);
+    }
+
+    function nope() {
+      alert("ihh 😝");
+    }
+  </script>
+</body>
+</html>

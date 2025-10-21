@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Sayang 💗</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+  :root{
+    --bg:#ffffff;
+    --card:#ffffff;
+    --pink-1:#ffeff6;
+    --pink-2:#ffd6e5;
+    --accent:#ff6fa9;
+    --muted:#6d5c5c;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--muted);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px 16px;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  .hearts {
+    pointer-events:none;
+    position:fixed;
+    left:0;top:0;width:100%;height:100%;z-index:5;overflow:hidden;
+  }
+
+  .wrap {
+    width:100%;
+    max-width:420px;
+    background:#ffffff;
+    border-radius:20px;
+    padding:26px;
+    border:1px solid rgba(255,192,203,0.35);
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+
+  .hero-img{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:14px;
+    margin:0 auto 18px;
+    box-shadow:none;
+  }
+
+  h1{
+    margin:0 0 12px;
+    color:var(--accent);
+    font-weight:600;
+    font-size:1.25rem;
+  }
+
+  .lead{
+    margin:0 10px 20px;
+    color:var(--muted);
+    line-height:1.5;
+    font-size:0.97rem;
+  }
+
+  .cta{
+    display:inline-block;
+    background:var(--pink-2);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:22px;
+    border:none;
+    box-shadow:0 4px #ffb6c1;
+    cursor:pointer;
+    font-weight:500;
+    margin-bottom:16px;
+    transition:transform .14s ease, box-shadow .14s ease;
+  }
+  .cta:active{transform:translateY(2px); box-shadow:0 2px #ffb6c1}
+
+  .message {
+    margin-top:14px;
+    text-align:left;
+    background:#ffffff;
+    padding:16px;
+    border-radius:14px;
+    border:1px solid rgba(255,192,203,0.35);
+    display:none;
+  }
+  .message p{margin:0 0 10px;color: #5b4b4b;line-height:1.6}
+</style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="wrap" id="wrap">
+    <img class="hero-img" id="hero" src="https://i.pinimg.com/originals/b1/16/65/b11665024465b911452b24dfee5fd8f6.gif" alt="hug">
+    <h1>barakallah fii umrik sayangku! 🎂</h1>
+
+    <p class="lead">selamat bertumbuh lebih baik lagi yaa, semoga sehat selalu dan bahagia terus.  
+      amel nulis sesuatu yang spesial banget buat kakak 💌 </p>
+
+    <button class="cta" id="revealBtn">baca pelan-pelan yaa... 💕</button>
+
+    <div class="message" id="messageBox">
+      <p id="longMsg">
+         Selamat ulang tahun, untuk pria impian amell.
+
+Hopefully as you get older, you faith and morals will be more perfect too💕.
+
+Umur memang hanya angka tapi kakak tau seberapa bersyukurnya amel sama Allah karena sampai hari ini Dia masih mengizinkan kakak untuk hidup dan menemani amel. Maaf ya, mungkin pesan amel bakal akan dipenuhi dengan kata "semoga dan terimakasih" hehe. Semoga kakak selalu di datangkan dengan hal2 yang baik dihidup kakak. I hope you know how much you're loved today dan semoga amell adalah seseorang yang tidak akan membuat kakak mencari orang lain lagi. Terimakasih telah membuat amel merasa nyaman tidak hanya ketika amell sangat membutuhkannya, tetapi setiap hari. Terimakasih telah menjadi orang yang begitu manis dan selalu berusaha memberi semua hal yang amel butuhkan untuk bahagia, i'm so lucky to be yours🫶. Maaf untuk segala kurang amel yaa ketika menjadi pasangan kakak, amell selalu mendo'akan yang terbaik untuk sayangg dan akan selalu memberikan yang terbaik semampu amell. Sukses untuk kedepannya ya cintaakuu, semoga segala urusan kakak selalu dipermudah jalannya Aamiin. I will always faithfully support you , semoga selalu dikuatkan bahunya dalam menghadapi cobaan dan ujian.
+
+And last, semoga sehat selalu sayangku, cintaku, lelaki baikku, manisku, and the most handsome man in the world💗.
+      </p>
+    </div>
+  </div>
+
+<script>
+  /* Efek hati */
+  const heartsContainer = document.getElementById('hearts');
+  function createHeart(){
+    const heart = document.createElement('div');
+    const size = Math.random()*18 + 12;
+    heart.style.position = 'absolute';
+    heart.style.left = (Math.random()*100) + '%';
+    heart.style.bottom = '-40px';
+    heart.style.width = size + 'px';
+    heart.style.height = size + 'px';
+    heart.style.background = 'radial-gradient(circle at 40% 35%, #fff, rgba(255,255,255,0.2)), linear-gradient(180deg, #ff9dbb, #ff6fa9)';
+    heart.style.transform = 'rotate(45deg)';
+    heart.style.borderRadius = '20% 20% 0 0';
+    heart.style.opacity = 0.95;
+    heartsContainer.appendChild(heart);
+
+    const duration = Math.random()*3000 + 3500;
+    const horizontalShift = (Math.random()*60 - 30);
+    heart.animate([
+      { transform: `translateY(0) rotate(45deg) translateX(0)`, opacity: 0.95 },
+      { transform: `translateY(-60vh) rotate(45deg) translateX(${horizontalShift}px)`, opacity: 0.05 }
+    ], { duration: duration, easing: 'ease-out', fill: 'forwards' });
+
+    setTimeout(()=> heart.remove(), duration + 100);
+  }
+  setInterval(()=> {
+    const count = Math.random() < 0.6 ? 1 : 2;
+    for(let i=0;i<count;i++) createHeart();
+  }, 500);
+
+  /* Tombol reveal */
+  const revealBtn = document.getElementById('revealBtn');
+  const messageBox = document.getElementById('messageBox');
+  revealBtn.addEventListener('click', () => {
+    messageBox.style.display = 'block';
+    messageBox.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>
